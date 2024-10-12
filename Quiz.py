@@ -177,3 +177,8 @@ if year % 4 == 0:
     print("Leap year")
 else:
     print("Not a leap year")
+
+#about loops
+for i in range(5):
+    print(i)
+
