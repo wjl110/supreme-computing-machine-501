@@ -35,6 +35,7 @@ class Battery:
   def __init__(self, battery_size = 40):
     # 初始化电池对象，设置电池容量
     self.battery_size = battery_size
+    # 实例化电池对象, 实电池容量
   def describe_battery(self):
     # 打印电池容量信息
     print(f'This car has a {self.battery_size}-kWh battery.')
@@ -43,8 +44,9 @@ class Battery:
     # 根据电池容量计算汽车续航里程
     if self.battery_size == 40:
       range = 150
+    # elif用于判断次级是否为真，如果为真，则执行下面的代码
     elif self.battery_size == 65:
-      range = 200
+      range = 225
     print(f'This car can go about {range} miles on a full charge.')
 
   def upgrade_battery(self):
@@ -73,12 +75,21 @@ my_leaf = ElectricCar('nissan','leaf', 2024)
 my_leaf.battery.describe_battery()
 my_leaf.battery.get_range()
 
+# 第二次升级电池容量参数后
+# 再次调用get_range()方法,更新range的值
+my_leaf.battery.upgrade_battery()
+my_leaf.battery.get_range()
 
+
+
+# 三个类：父类Car、二类继承类ElectricCar和属性类Battery。
 # 最后一排定义了一个ElectricCar类，继承自Car类，并添加了一个battery属性，用于存储电池容量信息。
 # ElectricCar类还重写了fill_gas_tank()方法，使其不再打印加油信息，而是打印电动汽车加油信息。
 # 最后，创建了一个ElectricCar对象my_leaf，并调用了battery的describe_battery()和get_range()方法，打印了电池容量和续航里程信息。
 
 # 汽油车用汽油车的电动等级,而不是电动车的等级
-my_electriccar = ElectricCar('Tesla', 'Model s', 2024)
-print(my_electriccar.get_descriptive_name())
-my_electriccar.fill_gas_tank()
+# my_electriccar = ElectricCar('Tesla', 'Model s', 2024)
+# print(my_electriccar.get_descriptive_name())
+
+# my_electriccar.get_descriptive_name()
+# my_electriccar.fill_gas_tank()
